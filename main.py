@@ -10,6 +10,8 @@ except FileNotFoundError:
 
 soup = BeautifulSoup()
 
+my_soup = soup.get(content, "html.parser")
+print(my_soup)
 
 
 
