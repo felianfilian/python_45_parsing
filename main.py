@@ -12,6 +12,9 @@ soup = BeautifulSoup(content, "html.parser")
 # get title text
 print(soup.title.string)
 
+all_a = soup.find_all("a")
+print(all_a)
+
 heading = soup.find(name="h1", id="name")
 print(heading.text)
 
