@@ -15,6 +15,7 @@ print(soup.title.string)
 heading = soup.find(name="h1", id="name")
 print(heading.text)
 
-
+select03 = soup.select(selector="#name")
+print(select03)
 
 
