@@ -18,4 +18,5 @@ print(heading.text)
 select03 = soup.select(selector="#name")
 print(select03)
 
-
+select04 = soup.select(selector=".heading")
+print(select04)
