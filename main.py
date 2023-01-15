@@ -5,8 +5,10 @@ response = requests.get("https://news.ycombinator.com/news")
 web_page = response.text
 soup = BeautifulSoup(web_page, "html.parser")
 
-print(soup.title)
+article_texts = []
+article_links = []
 
-article_upvote = soup.find(name="span", class_="score").getText()
-print(article_upvote)
+articles = soup.find_all(name="a")
+for article_tag in articles:
+    print(article_tag.getText())
 
