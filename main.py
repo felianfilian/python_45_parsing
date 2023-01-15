@@ -7,7 +7,6 @@ soup = BeautifulSoup(web_page, "html.parser")
 
 print(soup.title)
 
-# article_tag = soup.find(name="a", class_="storylink")
-# article_text = article_tag.getText()
-# print(article_text)
+article_upvote = soup.find(name="span", class_="score").getText()
+print(article_upvote)
 
