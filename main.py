@@ -14,8 +14,12 @@ for article_tag in articles:
     # print(article_tag.getText())
 
 # get upvotes
-article_upvotes = [score.getText().split()[0] for score in soup.find(name="span", class_="score")]
+article_upvotes = [int(score.getText().split()[0]) for score in soup.find_all(name="span", class_="score")]
+print(article_upvotes)
 max_score = max(article_upvotes)
-print(max_score)
+max_index = article_upvotes.index(max_score)
+print(max_index)
+print(article_texts[max_index])
+print(article_links[max_index])
 
 print(article_upvotes)
