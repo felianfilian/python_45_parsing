@@ -10,16 +10,17 @@ article_links = []
 
 articles = soup.find_all(name="a")
 for article_tag in articles:
-    pass
-    # print(article_tag.getText())
+    text = article_tag.getText()
+    article_texts.append(text)
+    link = article_tag.get("href")
+    article_links.append(link)
 
 # get upvotes
 article_upvotes = [int(score.getText().split()[0]) for score in soup.find_all(name="span", class_="score")]
-print(article_upvotes)
+
 max_score = max(article_upvotes)
 max_index = article_upvotes.index(max_score)
-print(max_index)
+
 print(article_texts[max_index])
 print(article_links[max_index])
 
-print(article_upvotes)
